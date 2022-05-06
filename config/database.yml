@@ -9,16 +9,16 @@ default: &default
 
 development:
   <<: *default
-  database: ac_brasil_development
+  database: finance_development
 
 
 test:
   <<: *default
-  database: ac_brasil_test
+  database: finance_test
 
 
 production:
   <<: *default
-  database: ac_brasil_production
-  username: ac_brasil
-  password: <%= ENV["AC_BRASIL_DATABASE_PASSWORD"] %>
+  database: finance_production
+  username: finance
+  password: <%= ENV["finance_DATABASE_PASSWORD"] %>

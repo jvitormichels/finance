@@ -1,10 +1,9 @@
 version: '3'
-
 services:
   rails:
     build: .
     command: rails s -b 0.0.0.0
-    container_name: ac_brasil
+    container_name: finance
     ports:
       - 3000:3000
     volumes:
@@ -21,6 +20,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     volumes:
-      - ac_brasil_data:/var/lib/postgresql/data
+      - finance_data:/var/lib/postgresql/data
 volumes:
-  ac_brasil_data:
+  finance_data:
+  
