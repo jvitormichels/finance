@@ -1,1 +1,24 @@
-yeye
+.actions-box
+  %ul
+    = link_to("Criar nova conta", "accounts/new")
+  %ul
+    = link_to("Criar nova entrada", "entries/new")
+
+.accounts-list
+  %table{class: "accounts-table"}
+    %tr
+      %td
+        Conta
+      %td
+        Balanço
+      %td
+        Ações
+    - @accounts.each do |account|
+      %tr
+        %td
+          = account.name
+        %td
+          = account.balance
+        %td
+          = button_to("Destroçar", {:controller => :accounts, :action => 'destroy', :id => account.id }, :method => :delete)
+          = button_to("Editar", {:controller => :accounts, :action => 'edit', :id => account.id }, :method => :get)
