@@ -2,7 +2,8 @@
 = form_for(@account, format: 'js', html: {role: 'form', class: 'form-proposal-template form-wrap ajax-loading' }) do |f|
   .form-box
     .form-header
-      Editar conta
+      %p
+        Editar conta
     .form-body
       %p
         = f.label :name, "Nome:"

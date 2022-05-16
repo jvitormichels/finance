@@ -1,0 +1,21 @@
+.actions-box
+  = button_to("Criar nova entrada", {:controller => :entries, :action => 'new'}, params: { account_id: @account.id }, :method => :get)
+
+%table{border: 1, class: "table"}
+  %tr
+    %th
+      Título
+    %th
+      Valor
+    %th
+      Ações
+  
+  - @entries.each do |entry|
+    %tr
+      %td
+        = entry.title
+      %td
+        = "R$ #{entry.value}"
+      %td
+        = button_to("Destroçar", {:controller => :entries, :action => 'destroy', :id => entry.id }, :method => :delete)
+        = button_to("Editar", {:controller => :entries, :action => 'edit', :id => entry.id }, :method => :get)

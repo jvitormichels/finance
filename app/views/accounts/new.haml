@@ -1,8 +1,8 @@
--# = form_with model: @account do |form|
 = form_for(@account, format: 'js', html: {role: 'form', class: 'form-proposal-template form-wrap ajax-loading' }) do |f|
   .form-box
     .form-header
-      Criar conta
+      %p
+        Criar conta
     .form-body
       %p
         = f.label :name, "Nome:"

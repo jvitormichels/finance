@@ -10,4 +10,10 @@ Rails.application.routes.draw do
       get '/:id', to: 'accounts#show'
     end
   end
+
+  resources :entries do
+    collection do
+      get '/new', to: 'entries#new'
+    end
+  end
 end

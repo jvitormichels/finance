@@ -13,7 +13,31 @@
  *= require_tree .
  */
 
-.accounts-table {
+body {
+  background-image: url("bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;  
+}
+
+.actions-box {
+  display: flex;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.table {
+  background-color: white;
+  border-collapse: collapse;
   table-layout: fixed;
   width: 500px
+}
+
+.table th, td {
+  padding: 5px;
+}
+
+.form-header p {
+  font-size: 1.3em;
+  font-weight: bold;
 }

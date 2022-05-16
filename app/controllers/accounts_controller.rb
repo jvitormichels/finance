@@ -4,7 +4,10 @@ class AccountsController < ApplicationController
   end
 
   def show
-    
+    @account = Account.where(id: params['id']).first
+    @entries = @account.entries
+
+    render 'show'
   end
 
   def new

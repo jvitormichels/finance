@@ -1,0 +1,20 @@
+= form_for(@entry, format: 'js', html: {role: 'form', class: 'form-proposal-template form-wrap ajax-loading' }) do |f|
+  .form-box
+    .form-header
+      %p
+        Editar Entrada
+    .form-body
+      %p
+        = f.label :title, "Título:"
+        = f.text_field :title
+      %p
+        = f.label :account_id, "Conta:"
+        = f.select :account_id, @accounts, {}
+      %p
+        = f.label :description, "Descrição:"
+        = f.text_area :description
+      %p
+        = f.label :value, "Valor:"
+        = f.number_field :value
+    .form-footer
+      = f.submit
