@@ -4,6 +4,8 @@ services:
     build: .
     command: rails s -b 0.0.0.0
     container_name: finance
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
     ports:
       - 3000:3000
     volumes:
