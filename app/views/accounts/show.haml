@@ -7,6 +7,8 @@
     %th
       Valor
     %th
+      Categoria
+    %th
       Ações
   
   - @entries.each do |entry|
@@ -17,6 +19,8 @@
         = entry.title
       %td
         = "R$ #{entry.value}"
+      %td
+        = entry.category.name
       %td
         = button_to("Destroçar", {:controller => :entries, :action => 'destroy', :id => entry.id }, :method => :delete)
         = button_to("Editar", {:controller => :entries, :action => 'edit', :id => entry.id }, :method => :get)

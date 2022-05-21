@@ -8,6 +8,9 @@
         = f.label :title, "Título:"
         = f.text_field :title, required: true
       %p
+        = f.label :category_id, "Categoria"
+        = f.select :category_id, @categories, {}, required: true
+      %p
         = f.label :description, "Descrição:"
         = f.text_area :description
       %p

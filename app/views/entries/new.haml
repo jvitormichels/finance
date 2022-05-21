@@ -11,6 +11,9 @@
         = f.label :account_id, "Conta:"
         = f.select :account_id, @accounts, {}, required: true
       %p
+        = f.label :category_id, "Categoria"
+        = f.select :category_id, @categories, {}, required: true
+      %p
         = f.label :description, "Descrição:"
         = f.text_area :description
       %p

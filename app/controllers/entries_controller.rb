@@ -1,6 +1,7 @@
 class EntriesController < ApplicationController
   def new
     @entry = Entry.new
+    @categories = Category.all.pluck(:name, :id)
     @accounts = Account.all.pluck(:name, :id)
 
     render 'new'
@@ -21,6 +22,7 @@ class EntriesController < ApplicationController
 
   def edit
     @entry = Entry.where(id: params['id']).first
+    @categories = Category.all.pluck(:name, :id)
     @accounts = Account.all.pluck(:name, :id)
 
     render 'edit'

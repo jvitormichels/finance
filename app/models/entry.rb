@@ -1,5 +1,6 @@
 class Entry < ApplicationRecord
   belongs_to :account
+  belongs_to :category
 
   def type_to_s(language = '')
     if language == 'pt'
@@ -17,7 +18,8 @@ class Entry < ApplicationRecord
       :description,
       :value,
       :account_id,
-      :type_id
+      :type_id,
+      :category_id
     ]
   end
 end
