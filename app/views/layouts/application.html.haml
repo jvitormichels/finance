@@ -13,4 +13,5 @@
       = link_to "Início", root_path
       = button_to("Nova conta", {:controller => :accounts, :action => 'new' }, :method => :get)
       = button_to("Novo registro", {:controller => :entries, :action => 'new'}, :method => :get)
+      = button_to("Categorias", {:controller => :categories, :action => 'index'}, :method => :get)
     = yield

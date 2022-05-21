@@ -16,4 +16,7 @@ Rails.application.routes.draw do
       get '/new', to: 'entries#new'
     end
   end
+
+  resources :categories do
+  end
 end
