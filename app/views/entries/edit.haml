@@ -6,10 +6,10 @@
     .form-body
       %p
         = f.label :title, "Título:"
-        = f.text_field :title, required
+        = f.text_field :title, required: true
       %p
         = f.label :description, "Descrição:"
-        = f.text_area :description, ""
+        = f.text_area :description
       %p
         = f.label :value, "Valor:"
         = f.number_field :value, required: true

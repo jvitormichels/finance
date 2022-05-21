@@ -6,12 +6,12 @@
     .form-body
       %p
         = f.label :name, "Nome:"
-        = f.text_field :name
+        = f.text_field :name, required: true
       %p
         = f.label :color, "Cor:"
         = f.color_field :color
       %p
         = f.label :balance, "Balanço:"
-        = f.text_field :balance
+        = f.text_field :balance, required: true
     .form-footer
       = f.submit
