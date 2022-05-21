@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_10_010611) do
     t.string "title"
     t.string "description"
     t.integer "account_id"
-    t.integer "value"
+    t.float "value", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

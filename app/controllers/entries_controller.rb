@@ -1,7 +1,7 @@
 class EntriesController < ApplicationController
   def new
     @entry = Entry.new
-    @account_id = params['account_id']
+    @accounts = Account.all.pluck(:name, :id)
 
     render 'new'
   end
@@ -9,7 +9,7 @@ class EntriesController < ApplicationController
   def create
     entry_params = params['entry']
     entry = Entry.create(title: entry_params['title'], description: entry_params['description'], value: entry_params['value'], account_id: entry_params['account_id'], value: entry_params['value'])
-    account_service.update_balance(entry.account_id, 0 - entry.value)
+    account_service.subtract_balance(entry.account_id, entry.value)
 
     redirect_to root_path
   end
@@ -23,19 +23,22 @@ class EntriesController < ApplicationController
 
   def update
     entry = Entry.where(id: params['id']).first
-    old_value = entry.value
-    entry_params = params['entry']
-    entry.update(title: entry_params['title'], description: entry_params['description'], value: entry_params['value'], account_id: entry_params['account_id'], value: entry_params['value'])
-    account_service.update_balance(entry.account_id, old_value - entry.value)
+    data = params.require(:entry).permit(Entry.allowed_params)
+    entry.assign_attributes(data)
+    value_changes = entry.changes['value']
+    entry.save
+    account_service.update_balance(entry.account_id, value_changes) if value_changes.present?
+    
+    redirect_to "/accounts/#{entry.account.id}"
   end
 
   def destroy
     entry = Entry.where(id: params['id']).first
-    AccountService.new.update_balance(entry.account_id, entry.value)
+    account_service.add_balance(entry.account_id, entry.value)
     entry.destroy
 
     respond_to do |format|
-      format.js {render inline: "location.reload();" }
+      format.js { render inline: "location.reload();" }
     end
   end
 

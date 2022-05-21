@@ -8,13 +8,14 @@
         = f.label :title, "Título:"
         = f.text_field :title
       %p
+        = f.label :account_id, "Conta:"
+        = f.select :account_id, @accounts, {}
+      %p
         = f.label :description, "Descrição:"
         = f.text_area :description
       %p
         = f.label :value, "Valor:"
-        = f.number_field :value
-
-      = f.hidden_field :account_id, value: @account_id
+        = f.number_field :value, required: true
 
     .form-footer
       = f.submit

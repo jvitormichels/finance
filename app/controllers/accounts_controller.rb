@@ -31,6 +31,8 @@ class AccountsController < ApplicationController
     account = Account.where(id: params['id']).first
     account_params = params['account']
     account.update(name: account_params['name'], color: account_params['color'], balance: account_params['balance'])
+
+    redirect_to root_path
   end
 
   def destroy

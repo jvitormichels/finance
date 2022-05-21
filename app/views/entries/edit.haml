@@ -6,15 +6,13 @@
     .form-body
       %p
         = f.label :title, "Título:"
-        = f.text_field :title
-      %p
-        = f.label :account_id, "Conta:"
-        = f.select :account_id, @accounts, {}
+        = f.text_field :title, required
       %p
         = f.label :description, "Descrição:"
-        = f.text_area :description
+        = f.text_area :description, ""
       %p
         = f.label :value, "Valor:"
-        = f.number_field :value
+        = f.number_field :value, required: true
+
     .form-footer
       = f.submit

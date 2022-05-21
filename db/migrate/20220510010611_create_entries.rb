@@ -4,7 +4,7 @@ class CreateEntries < ActiveRecord::Migration[7.0]
       t.string :title
       t.string :description
       t.integer :account_id
-      t.integer :value
+      t.float :value, default: 0
 
       t.timestamps
     end

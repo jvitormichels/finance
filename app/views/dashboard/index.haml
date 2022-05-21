@@ -1,5 +1,6 @@
 .actions-box
   = button_to("Criar nova conta", {:controller => :accounts, :action => 'new' }, :method => :get)
+  = button_to("Criar nova entrada", {:controller => :entries, :action => 'new'}, :method => :get)
 
 .accounts-list
   %table{border: 1, class: "table"}
