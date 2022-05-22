@@ -16,6 +16,9 @@
       %p
         = f.label :value, "Valor:"
         = f.number_field :value, required: true
+      %p
+        = f.label :installment_id, "Orçamento associado:"
+        = f.select :installment_id, @installments, include_blank: true, required: true
 
     .form-footer
       = f.submit

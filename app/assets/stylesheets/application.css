@@ -37,6 +37,22 @@ body {
   padding: 5px;
 }
 
+.installment-info {
+  border: 1px solid black;
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 558px;
+}
+
+.installment-positive {
+  color: green;
+}
+
+.installment-negative {
+  color: red;
+}
+
 .form-header p {
   font-size: 1.3em;
   font-weight: bold;

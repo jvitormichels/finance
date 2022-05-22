@@ -22,6 +22,9 @@
       %p
         = f.label :type_id, "Tipo:"
         = f.select :type_id, [["Despesa", 1],["Receita", 2]], required: true
+      %p
+        = f.label :installment_id, "Orçamento associado:"
+        = f.select :installment_id, @installments, include_blank: true, required: true
 
     .form-footer
       = f.submit

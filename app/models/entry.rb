@@ -2,6 +2,8 @@ class Entry < ApplicationRecord
   belongs_to :account
   belongs_to :category
 
+  has_one :installment
+
   def type_to_s(language = '')
     if language == 'pt'
       return "Despesa" if self.type_id == 1
@@ -19,7 +21,8 @@ class Entry < ApplicationRecord
       :value,
       :account_id,
       :type_id,
-      :category_id
+      :category_id,
+      :installment_id
     ]
   end
 end

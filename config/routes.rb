@@ -20,4 +20,6 @@ Rails.application.routes.draw do
 
   resources :categories do
   end
+
+  resources :installments, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 end
