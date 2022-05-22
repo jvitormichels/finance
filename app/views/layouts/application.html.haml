@@ -9,9 +9,12 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
   %body
-    .actions-box
-      = link_to "Início", root_path
-      = button_to("Nova conta", {:controller => :accounts, :action => 'new' }, :method => :get)
-      = button_to("Novo registro", {:controller => :entries, :action => 'new'}, :method => :get)
-      = button_to("Categorias", {:controller => :categories, :action => 'index'}, :method => :get)
+    - if user_signed_in?
+      = link_to "Logout", destroy_user_session_path, method: :delete
+
+      .actions-box
+        = link_to "Início", root_path
+        = button_to("Nova conta", {:controller => :accounts, :action => 'new' }, :method => :get)
+        = button_to("Novo registro", {:controller => :entries, :action => 'new'}, :method => :get)
+        = button_to("Categorias", {:controller => :categories, :action => 'index'}, :method => :get)
     = yield
