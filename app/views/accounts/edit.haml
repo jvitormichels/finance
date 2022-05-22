@@ -1,18 +1,18 @@
--# = form_with model: @account do |form|
-= form_for(@account, format: 'js', html: {role: 'form', class: 'form-proposal-template form-wrap ajax-loading' }) do |f|
-  .form-box
-    .form-header
-      %p
-        Editar conta
-    .form-body
-      %p
-        = f.label :name, "Nome:"
-        = f.text_field :name
-      %p
-        = f.label :color, "Cor:"
-        = f.color_field :color
-      %p
-        = f.label :balance, "Balanço:"
-        = f.text_field :balance
-    .form-footer
-      = f.submit
+.show-box
+  = form_for(@account, format: 'js', html: {role: 'form', class: 'form-proposal-template form-wrap ajax-loading' }) do |f|
+    .form-box
+      .form-header
+        %p
+          Editar conta
+      .form-body
+        %p
+          = f.label :name, "Nome:"
+          = f.text_field :name
+        %p
+          = f.label :color, "Cor:"
+          = f.color_field :color
+        %p
+          = f.label :balance, "Balanço:"
+          = f.text_field :balance
+      .form-footer
+        = f.submit

@@ -12,5 +12,5 @@
       %td
         = category.name
       %td
-        = button_to("Destroçar", {:controller => :categories, :action => 'destroy', :id => category.id }, :method => :delete)
+        = button_to("Destroçar", {:controller => :categories, :action => 'destroy', :id => category.id }, :method => :delete, data: { confirm: 'Tem certeza que quer destroçar isso ai?' })
         = button_to("Editar", {:controller => :categories, :action => 'edit', :id => category.id }, :method => :get)

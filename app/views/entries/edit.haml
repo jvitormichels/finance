@@ -1,24 +1,25 @@
-= form_for(@entry, format: 'js', html: {role: 'form', class: 'form-proposal-template form-wrap ajax-loading' }) do |f|
-  .form-box
-    .form-header
-      %p
-        Editar registro
-    .form-body
-      %p
-        = f.label :title, "Título:"
-        = f.text_field :title, required: true
-      %p
-        = f.label :category_id, "Categoria"
-        = f.select :category_id, @categories, {}, required: true
-      %p
-        = f.label :description, "Descrição:"
-        = f.text_area :description
-      %p
-        = f.label :value, "Valor:"
-        = f.number_field :value, required: true
-      %p
-        = f.label :installment_id, "Orçamento associado:"
-        = f.select :installment_id, @installments, include_blank: true, required: true
+.show-box
+  = form_for(@entry, format: 'js', html: {role: 'form', class: 'form-proposal-template form-wrap ajax-loading' }) do |f|
+    .form-box
+      .form-header
+        %p
+          Editar registro
+      .form-body
+        %p
+          = f.label :title, "Título:"
+          = f.text_field :title, required: true
+        %p
+          = f.label :category_id, "Categoria"
+          = f.select :category_id, @categories, {}, required: true
+        %p
+          = f.label :description, "Descrição:"
+          = f.text_area :description
+        %p
+          = f.label :value, "Valor:"
+          = f.number_field :value, required: true
+        %p
+          = f.label :installment_id, "Orçamento associado:"
+          = f.select :installment_id, @installments, include_blank: true, required: true
 
-    .form-footer
-      = f.submit
+      .form-footer
+        = f.submit
