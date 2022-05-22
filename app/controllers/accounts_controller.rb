@@ -1,6 +1,6 @@
 class AccountsController < ApplicationController
   def index
-    @accounts = Account.all
+    @accounts = current_user.accounts
   end
 
   def show
@@ -16,8 +16,7 @@ class AccountsController < ApplicationController
   end
 
   def create
-    account = params['account']
-    Account.create(name: account['name'], color: account['color'], balance: account['balance'])
+    Account.create(account_params)
 
     redirect_to root_path
   end
@@ -30,7 +29,7 @@ class AccountsController < ApplicationController
   def update
     account = Account.where(id: params['id']).first
     account_params = params['account']
-    account.update(name: account_params['name'], color: account_params['color'], balance: account_params['balance'])
+    account.update(account_params)
 
     redirect_to root_path
   end
@@ -46,6 +45,6 @@ class AccountsController < ApplicationController
   private
 
   def account_params
-    params['account']
+    params.require(:account).permit(Account.allowed_params)
   end
 end

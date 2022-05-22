@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all
+    @categories = current_user.categories
   end
 
   def new
@@ -8,17 +8,19 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    category = Category.create(category_params)
+    category = Category.new(category_params)
+    category.user_id = current_user.id
+    category.save
 
     redirect_to '/categories'
   end
 
   def edit
-    @category = Category.where(id: params['id']).first
+    @category = current_user.categories.where(id: params['id']).first
   end
 
   def update
-    category = Category.where(id: params['id']).first
+    category = current_user.categories.where(id: params['id']).first
     category.update(category_params)
 
     redirect_to '/categories'
