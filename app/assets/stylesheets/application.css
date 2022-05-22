@@ -33,6 +33,10 @@ body {
   width: 600px
 }
 
+.table th {
+  background-color: rgb(240, 240, 240);
+}
+
 .table th, td {
   padding: 5px;
 }

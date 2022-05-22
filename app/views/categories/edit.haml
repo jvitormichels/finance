@@ -1,13 +1,7 @@
 .show-box
-  = form_for(@category, format: 'js', html: {role: 'form', class: 'form-proposal-template form-wrap ajax-loading' }) do |f|
-    .form-box
-      .form-header
-        %p
-          Editar categoria
-      .form-body
-        %p
-          = f.label :name, "Nome:"
-          = f.text_field :name, required: true
-
-      .form-footer
-        = f.submit
+  .form-box
+    .form-header
+      %p
+        Editar categoria
+    
+    = render 'categories/form'

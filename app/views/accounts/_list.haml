@@ -1,0 +1,20 @@
+.accounts-list
+  %table{border: 1, class: "table"}
+    %thead
+      %tr
+        %th
+          Conta
+        %th
+          Balanço
+        %th
+          Ações
+    %tbody
+      - @accounts.each do |account|
+        %tr
+          %td
+            = link_to(account.name, "accounts/#{account.id}")
+          %td
+            = "R$ #{account.balance}"
+          %td
+            = button_to("Destroçar", {:controller => :accounts, :action => 'destroy', :id => account.id }, :method => :delete, data: { confirm: 'Tem certeza que quer destroçar isso ai?' })
+            = button_to("Editar", {:controller => :accounts, :action => 'edit', :id => account.id }, :method => :get)
