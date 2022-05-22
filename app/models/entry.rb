@@ -22,7 +22,8 @@ class Entry < ApplicationRecord
       :account_id,
       :type_id,
       :category_id,
-      :installment_id
+      :installment_id,
+      :date
     ]
   end
 end

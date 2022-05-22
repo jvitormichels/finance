@@ -45,11 +45,11 @@ body {
   width: 558px;
 }
 
-.installment-positive {
+.positive {
   color: green;
 }
 
-.installment-negative {
+.negative {
   color: red;
 }
 

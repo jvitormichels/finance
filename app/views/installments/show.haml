@@ -10,36 +10,11 @@
   %p
     %strong
       Gasto Real: 
-    %span{class: "#{real_expense > @installment.planned_expense ? "installment-negative" : "installment-positive"}"}
+    %span{class: "#{real_expense > @installment.planned_expense ? "negative" : "positive"}"}
       = "R$ #{real_expense}"
 
   .actions-box
     = button_to("Destroçar", {:controller => :installments, :action => 'destroy', :id => @installment.id }, :method => :delete, data: { confirm: 'Tem certeza que quer destroçar isso ai?' })
     = button_to("Editar", {:controller => :installments, :action => 'edit', :id => @installment.id }, :method => :get)
 
-%table{border: 1, class: "table"}
-  %tr
-    %th
-      Tipo
-    %th
-      Título
-    %th
-      Valor
-    %th
-      Categoria
-    %th
-      Ações
-  
-  - @entries.each do |entry|
-    %tr
-      %td
-        = entry.type_to_s("pt")
-      %td
-        = entry.title
-      %td
-        = "R$ #{entry.value}"
-      %td
-        = entry.category.name
-      %td
-        = button_to("Destroçar", {:controller => :entries, :action => 'destroy', :id => entry.id }, :method => :delete, data: { confirm: 'Tem certeza que quer destroçar isso ai?' })
-        = button_to("Editar", {:controller => :entries, :action => 'edit', :id => entry.id }, :method => :get)
+= render 'entries/list'

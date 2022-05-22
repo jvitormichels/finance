@@ -5,9 +5,11 @@ class AccountsController < ApplicationController
 
   def show
     @account = Account.where(id: params['id']).first
-    @entries = @account.entries
+    @entries = @account.entries.order(date: :desc)
 
-    render 'show'
+    cash_flow = account_service.cash_flow(@account.id)
+    cash_flow_state = cash_flow >= 0 ? "positive" : "negative"
+    render 'show', locals: {cash_flow: cash_flow.abs, cash_flow_state: cash_flow_state}
   end
 
   def new
@@ -16,7 +18,9 @@ class AccountsController < ApplicationController
   end
 
   def create
-    Account.create(account_params)
+    account = Account.new(account_params)
+    account.user_id = current_user.id
+    account.save
 
     redirect_to root_path
   end
@@ -46,5 +50,9 @@ class AccountsController < ApplicationController
 
   def account_params
     params.require(:account).permit(Account.allowed_params)
+  end
+
+  def account_service
+    @account_service ||= AccountService.new
   end
 end

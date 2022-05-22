@@ -1,26 +1,19 @@
-%table{border: 1, class: "table"}
-  %tr
-    %th
-      Tipo
-    %th
-      Título
-    %th
-      Valor
-    %th
-      Categoria
-    %th
-      Ações
-  
-  - @entries.each do |entry|
-    %tr
-      %td
-        = entry.type_to_s("pt")
-      %td
-        = entry.title
-      %td
-        = "R$ #{entry.value}"
-      %td
-        = entry.category.name
-      %td
-        = button_to("Destroçar", {:controller => :entries, :action => 'destroy', :id => entry.id }, :method => :delete, data: { confirm: 'Tem certeza disso ai, irmã?' })
-        = button_to("Editar", {:controller => :entries, :action => 'edit', :id => entry.id }, :method => :get)
+.show-box
+  %p
+    %h2
+      = @account.name
+  %p
+    %strong
+      Saldo atual: 
+    = "R$ #{@account.balance}"
+  %p
+    %strong
+      Fluxo de caixa: 
+    %span{class: "#{cash_flow_state}"}
+      = "R$ #{cash_flow}"
+
+  .actions-box
+    = button_to("Destroçar", {:controller => :accounts, :action => 'destroy', :id => @account.id }, :method => :delete, data: { confirm: 'Tem certeza que quer destroçar isso ai?' })
+    = button_to("Editar", {:controller => :accounts, :action => 'edit', :id => @account.id }, :method => :get)
+
+= render 'entries/list'

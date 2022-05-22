@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   def new
-    @entry = Entry.new
+    @entry = Entry.new(date: Date.current)
     @categories = current_user.categories.pluck(:name, :id)
     @installments = current_user.installments.pluck(:name, :id)
     @accounts = current_user.accounts.pluck(:name, :id)

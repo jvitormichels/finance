@@ -1,4 +1,11 @@
 class AccountService
+  def cash_flow(account_id, year = Date.current.year, month = Date.current.month)
+    account = Account.where(id: account_id).first
+    expense_total = account.entries.where(type_id: 1).sum(:value)
+    income_total = account.entries.where(type_id: 2).sum(:value)
+    income_total - expense_total
+  end
+
   def add_balance(account_id, value)
     account = Account.where(id: account_id).first
     balance = account.balance + value

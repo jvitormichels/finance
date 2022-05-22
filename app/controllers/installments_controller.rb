@@ -7,7 +7,9 @@ class InstallmentsController < ApplicationController
     @installment = current_user.installments.where(id: params['id']).first
     @entries = @installment.entries
 
-    render 'show', locals: { real_expense: @installment.real_expense }
+    real_expense = @installment.real_expense
+    installment_state = @installment.real_expense >= 0 ? "positive" : "negative"
+    render 'show', locals: { real_expense: real_expense, installment_state: installment_state }
   end
 
   def new
