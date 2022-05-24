@@ -1,8 +1,17 @@
 class AccountService
-  def cash_flow(account_id, year = Date.current.year, month = Date.current.month)
+  def account_cash_flow(account_id, year = Date.current.year, month = Date.current.month)
     account = Account.where(id: account_id).first
-    expense_total = account.entries.where(type_id: 1).sum(:value)
-    income_total = account.entries.where(type_id: 2).sum(:value)
+    entries = account.entries.where('extract(year from date) = ?', year).where('extract(month from date) = ?', month)
+    expense_total = entries.where(type_id: 1).sum(:value)
+    income_total = entries.where(type_id: 2).sum(:value)
+    income_total - expense_total
+  end
+
+  def user_cash_flow(user_id, year = Date.current.year, month = Date.current.month)
+    user = User.where(id: user_id).first
+    entries = user.entries.where('extract(year from date) = ?', year).where('extract(month from date) = ?', month)
+    expense_total = entries.where(type_id: 1).sum(:value)
+    income_total = entries.where(type_id: 2).sum(:value)
     income_total - expense_total
   end
 

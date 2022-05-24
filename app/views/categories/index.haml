@@ -1,16 +1,5 @@
-.actions-box
-  = button_to("Nova categoria", {:controller => :categories, :action => 'new'}, :method => :get)
+.categories-box
+  .actions-box
+    = button_to("Nova categoria", {:controller => :categories, :action => 'new'}, :method => :get)
 
-%table{border: 1, class: "table"}
-  %tr
-    %th
-      Categoria
-    %th
-      Ações
-  - @categories.each do |category|
-    %tr
-      %td
-        = category.name
-      %td
-        = button_to("Destroçar", {:controller => :categories, :action => 'destroy', :id => category.id }, :method => :delete, data: { confirm: 'Tem certeza que quer destroçar isso ai?' })
-        = button_to("Editar", {:controller => :categories, :action => 'edit', :id => category.id }, :method => :get)
+  = render 'categories/list'

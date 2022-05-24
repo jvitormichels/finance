@@ -1,21 +1,22 @@
-.actions-box
-  = button_to("Novo orçamento", {:controller => :installments, :action => 'new'}, :method => :get)
+.installment-box
+  .actions-box
+    = button_to("Novo orçamento", {:controller => :installments, :action => 'new'}, :method => :get)
 
-.installment-list
-  %table{border: 1, class: "table"}
-    %tr
-      %th
-        Orçamento
-      %th
-        Gasto planejado
-      %th
-        Ações
-    - @installments.each do |installment|
+  .installment-list
+    %table{border: 1, class: "table"}
       %tr
-        %td
-          = link_to(installment.name, "installments/#{installment.id}")
-        %td
-          = "R$ #{installment.planned_expense}"
-        %td
-          = button_to("Destroçar", {:controller => :installments, :action => 'destroy', :id => installment.id }, :method => :delete, data: { confirm: 'Tem certeza que quer destroçar isso ai?' })
-          = button_to("Editar", {:controller => :installments, :action => 'edit', :id => installment.id }, :method => :get)
+        %th
+          Orçamento
+        %th
+          Gasto planejado
+        %th
+          Ações
+      - @installments.each do |installment|
+        %tr
+          %td
+            = link_to(installment.name, "installments/#{installment.id}")
+          %td
+            = "R$ #{installment.planned_expense}"
+          %td
+            = button_to("Destroçar", {:controller => :installments, :action => 'destroy', :id => installment.id }, :method => :delete, data: { confirm: 'Tem certeza que quer destroçar isso ai?' })
+            = button_to("Editar", {:controller => :installments, :action => 'edit', :id => installment.id }, :method => :get)

@@ -3,6 +3,13 @@ class CategoriesController < ApplicationController
     @categories = current_user.categories
   end
 
+  def show
+    @category = Category.where(id: params['id']).first
+    month_entries = @category.entries.where('extract(month from date) = ?', Date.current.month).where('extract(year from date) = ?', Date.current.year)
+    @expenses_this_month = month_entries.where(type_id: 1).sum(:value)
+    @entries = @category.entries
+  end
+
   def new
     @category = Category.new
   end

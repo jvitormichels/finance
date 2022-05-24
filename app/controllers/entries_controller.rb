@@ -1,4 +1,13 @@
 class EntriesController < ApplicationController
+  def index
+    # Entry.all.group_by { |m| m.created_at.beginning_of_month }
+    @entries = Entries.all
+  end
+
+  def show
+    @entry = Entry.where(id: params['id']).first
+  end
+
   def new
     @entry = Entry.new(date: Date.current)
     @categories = current_user.categories.pluck(:name, :id)

@@ -12,11 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :entries do
-    collection do
-      get '/new', to: 'entries#new'
-    end
-  end
+  resources :entries, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   resources :categories do
   end

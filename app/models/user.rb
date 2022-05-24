@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :accounts
+  has_many :entries, through: :accounts
   has_many :categories
   has_many :installments
   # Include default devise modules. Others available are:

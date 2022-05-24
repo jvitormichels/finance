@@ -5,7 +5,6 @@ class Account < ApplicationRecord
   def self.allowed_params
     [
       :name,
-      :color,
       :balance
     ]
   end

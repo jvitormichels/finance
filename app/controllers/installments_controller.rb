@@ -9,7 +9,8 @@ class InstallmentsController < ApplicationController
 
     real_expense = @installment.real_expense
     installment_state = @installment.real_expense >= 0 ? "positive" : "negative"
-    render 'show', locals: { real_expense: real_expense, installment_state: installment_state }
+    balance = @installment.planned_expense - real_expense
+    render 'show', locals: { real_expense: real_expense, balance: balance, installment_state: installment_state }
   end
 
   def new

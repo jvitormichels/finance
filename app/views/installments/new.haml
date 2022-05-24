@@ -1,19 +1,7 @@
 .show-box
-  = form_for(@installment, format: 'js', html: {role: 'form', class: 'form-proposal-template form-wrap ajax-loading' }) do |f|
-    .form-box
-      .form-header
-        %p
-          Criar orçamento
-      .form-body
-        %p
-          = f.label :name, "Nome:"
-          = f.text_field :name, required: true
-        %p
-          = f.label :description, "Descrição:"
-          = f.text_area :description
-        %p
-          = f.label :planned_expense, "Gasto planejado:"
-          = f.text_field :planned_expense, required: true
+  .form-box
+    .form-header
+      %p
+        Criar orçamento
 
-      .form-footer
-        = f.submit
+    = render 'installments/form'

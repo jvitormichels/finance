@@ -1,0 +1,13 @@
+.categories-box
+  .show-box
+    %p
+      = link_to 'Voltar para o início', :back
+    %p
+      %h2
+        = @category.name
+    %p
+      %strong
+        Gastos do mês: 
+      = "R$ #{@expenses_this_month}"
+
+  = render 'entries/list'

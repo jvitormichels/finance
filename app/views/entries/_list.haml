@@ -1,31 +1,37 @@
-%table{border: 1, class: "table"}
-  %thead
-    %tr
-      %th
-        Tipo
-      %th
-        Título
-      %th
-        Valor
-      %th
-        Data
-      %th
-        Categoria
-      %th
-        Ações
-  %tbody
-    - @entries.each do |entry|
+- if @entries.present?
+  %table{border: 1, class: "table"}
+    %thead
       %tr
-        %td
-          = entry.type_to_s("pt")
-        %td
-          = entry.title
-        %td
-          = "R$ #{entry.value}"
-        %td
-          = entry.date&.strftime("%d/%m/%Y")
-        %td
-          = entry.category.name
-        %td
-          = button_to("Destroçar", {:controller => :entries, :action => 'destroy', :id => entry.id }, :method => :delete, data: { confirm: 'Tem certeza disso ai, irmã?' })
-          = button_to("Editar", {:controller => :entries, :action => 'edit', :id => entry.id }, :method => :get)
+        %th
+          Tipo
+        %th
+          Título
+        %th
+          Valor
+        %th
+          Data
+        %th
+          Categoria
+        %th
+          Ações
+    %tbody
+      - @entries.each do |entry|
+        %tr
+          %td{class: entry.type_to_s}
+            = entry.type_to_s("pt")
+          %td
+            = link_to(entry.title, {:controller => :entries, :action => 'show', :id => entry.id }, :method => :get)
+          %td
+            = "R$ #{entry.value}"
+          %td
+            = entry.date&.strftime("%d/%m/%Y")
+          %td
+            = link_to(entry.category.name, {:controller => :categories, :action => 'show', :id => entry.category.id }, :method => :get)
+          %td{class: "actions-box"}
+            = button_to("Destroçar", {:controller => :entries, :action => 'destroy', :id => entry.id }, :method => :delete, data: { confirm: 'Tem certeza disso ai, irmã?' })
+            = button_to("Editar", {:controller => :entries, :action => 'edit', :id => entry.id }, :method => :get)
+- else
+  .show-box
+    %p
+      %h2
+        Não foram encontradas entradas

@@ -1,19 +1,27 @@
-.show-box
-  %p
-    %h2
-      = @installment.name
-  %p
-    %strong
-      Gasto planejado: 
-    = "R$ #{@installment.planned_expense}"
-  %p
-    %strong
-      Gasto Real: 
-    %span{class: "#{real_expense > @installment.planned_expense ? "negative" : "positive"}"}
-      = "R$ #{real_expense}"
+.installment-box
+  .show-box
+    %p
+      = link_to 'Voltar para a lista', :back
+    %p
+      %h2
+        = @installment.name
+    %p
+      %strong
+        Gasto planejado: 
+      = "R$ #{@installment.planned_expense}"
+    %p
+      %strong
+        Saldo do orçamento: 
+      %span{class: balance >= 0 ? "positive" : "negative"}
+        = "R$ #{balance}"
+    %p
+      %strong
+        Gasto Real: 
+      %span{class: "#{real_expense > @installment.planned_expense ? "negative" : "positive"}"}
+        = "R$ #{real_expense}"
 
-  .actions-box
-    = button_to("Destroçar", {:controller => :installments, :action => 'destroy', :id => @installment.id }, :method => :delete, data: { confirm: 'Tem certeza que quer destroçar isso ai?' })
-    = button_to("Editar", {:controller => :installments, :action => 'edit', :id => @installment.id }, :method => :get)
+    .actions-box
+      = button_to("Destroçar", {:controller => :installments, :action => 'destroy', :id => @installment.id }, :method => :delete, data: { confirm: 'Tem certeza que quer destroçar isso ai?' })
+      = button_to("Editar", {:controller => :installments, :action => 'edit', :id => @installment.id }, :method => :get)
 
-= render 'entries/list'
+  = render 'entries/list'

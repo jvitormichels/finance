@@ -7,4 +7,12 @@ class Category < ApplicationRecord
       :name
     ]
   end
+
+  def total_expenses
+    self.entries.where(type_id: 1).sum(:value)
+  end
+
+  def total_occurrences
+    self.entries.count
+  end
 end
