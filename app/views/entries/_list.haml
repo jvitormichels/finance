@@ -11,25 +11,21 @@
         %th
           Data
         %th
-          Categoria
-        %th
           Ações
     %tbody
       - @entries.each do |entry|
         %tr
-          %td{class: entry.type_to_s}
-            = entry.type_to_s("pt")
+          %td{class: (entry['type_id'] == "1" ? "expense" : "income")}
+            = entry['type_id'] == "1" ? "Despesa" : "Receita"
           %td
-            = link_to(entry.title, {:controller => :entries, :action => 'show', :id => entry.id }, :method => :get)
+            = link_to(entry['title'], {:controller => :entries, :action => 'show', :id => entry['id'] }, :method => :get)
           %td
-            = "R$ #{entry.value}"
+            = "R$ #{entry['value']}"
           %td
-            = entry.date&.strftime("%d/%m/%Y")
-          %td
-            = link_to(entry.category.name, {:controller => :categories, :action => 'show', :id => entry.category.id }, :method => :get)
+            = entry['date'].to_date.strftime("%d/%m/%Y")
           %td{class: "actions-box"}
-            = button_to("Destroçar", {:controller => :entries, :action => 'destroy', :id => entry.id }, :method => :delete, data: { confirm: 'Tem certeza disso ai, irmã?' })
-            = button_to("Editar", {:controller => :entries, :action => 'edit', :id => entry.id }, :method => :get)
+            = button_to("Destroçar", {:controller => :entries, :action => 'destroy', :id => entry['id'] }, :method => :delete, data: { confirm: 'Tem certeza disso ai, irmã?' })
+            = button_to("Editar", {:controller => :entries, :action => 'edit', :id => entry['id'] }, :method => :get)
 - else
   .show-box
     %p

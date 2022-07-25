@@ -1,0 +1,34 @@
+.show-box
+  .form-box
+    .form-header
+      %p
+        Editar registro
+    = form_for(:account, url: "new.json") do |f|
+      .form-body
+        %p
+          = f.label :title, "Título:"
+          = f.text_field @entry['title'], required: true, value: ()
+        %p
+          = f.label :account_id, "Conta:"
+          = f.select @entry['account_id'], @accounts, {}, required: true
+        %p
+          = f.label :category_id, "Categoria"
+          = f.select @entry['category_id'], @categories, {}, required: true
+        %p
+          = f.label :description, "Descrição:"
+          = f.text_area @entry['description']
+        %p
+          = f.label :date, "Data:"
+          = f.date_field @entry['date'], required: true
+        %p
+          = f.label :value, "Valor:"
+          = f.number_field @entry['value'], required: true
+        %p
+          = f.label :type_id, "Tipo:"
+          = f.select @entry['type_id'], [["Despesa", 1],["Receita", 2]], required: true
+        %p
+          = f.label :installment_id, "Orçamento associado:"
+          = f.select @entry['installment_id'], @installments, include_blank: true, required: true
+
+      .form-footer
+        = f.submit
