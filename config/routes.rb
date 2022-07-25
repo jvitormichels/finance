@@ -12,7 +12,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :entries, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :entries, only: [:index, :show, :new, :create, :edit, :destroy]
+  resources :entries do
+    collection do
+      post '/:id/update', to: 'entries#update'
+    end
+  end
 
   resources :categories do
   end
