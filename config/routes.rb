@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   end
 
   resources :categories do
+    collection do
+      post '/:id/update', to: 'categories#update'
+    end
   end
 
   resources :installments, only: [:index, :show, :new, :create, :edit, :update, :destroy]

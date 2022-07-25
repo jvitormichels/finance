@@ -5,4 +5,11 @@
         %p
           Nova categoria
       
-      = render 'categories/form'
+      = form_for(:category, url: "/categories") do |f|
+        .form-body
+          %p
+            = f.label :name, "Nome:"
+            = f.text_field :name, required: true
+
+        .form-footer
+          = f.submit
