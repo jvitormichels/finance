@@ -33,7 +33,6 @@ class InstallmentsController < ApplicationController
   end
 
   def update
-
     redis_client.mapped_hmset("installment:#{params['id']}", installment_params)
 
     redirect_to '/installments'
@@ -41,8 +40,14 @@ class InstallmentsController < ApplicationController
 
   def destroy
     redis_client.del("installment:#{params['id']}")
+    installment_entry_keys = redis_client.keys("entry:*")
+    installment_entry_keys.each do |key|
+      byebug
+      entry = redis_client.hgetall(key)
+      redis_client.hmset(key, "installment_id", "") if entry['installment_id'] == params['id']
+    end
 
-    redirect_to '/installments'
+    redirect_to '/'
   end
 
   private

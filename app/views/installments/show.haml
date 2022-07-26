@@ -25,7 +25,6 @@
       = "#{@installment['description']}"
 
     .actions-box
-      = button_to("Destroçar", {:controller => :installments, :action => 'destroy', :id => @installment['id'] }, :method => :delete, data: { confirm: 'Tem certeza que quer destroçar isso ai?' })
       = button_to("Editar", {:controller => :installments, :action => 'edit', :id => @installment['id'] }, :method => :get)
 
   = render 'entries/list'
