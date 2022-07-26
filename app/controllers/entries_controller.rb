@@ -19,6 +19,7 @@ class EntriesController < ApplicationController
     new_id = redis_client.hmget("next_object_ids", "entry")[0] || 1
     redis_client.hmset("next_object_ids", "entry", (new_id.to_i + 1))
     redis_client.mapped_hmset("entry:#{new_id}", entry_params)
+    redis_client.mapped_hmset("entry:#{new_id}", {"id": new_id})
     entry = redis_client.hgetall("entry:#{new_id}")
     # Entry.create(entry_params) # byebug
 

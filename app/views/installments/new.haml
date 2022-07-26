@@ -4,4 +4,17 @@
       %p
         Criar orçamento
 
-    = render 'installments/form'
+    = form_for(:installment, url: "/installments") do |f|
+      .form-body
+        %p
+          = f.label :name, "Nome:"
+          = f.text_field :name, required: true
+        %p
+          = f.label :description, "Descrição:"
+          = f.text_area :description
+        %p
+          = f.label :planned_expense, "Gasto planejado:"
+          = f.text_field :planned_expense, required: true
+
+      .form-footer
+        = f.submit

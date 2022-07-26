@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   def show
     @category = redis_client.hgetall("category:#{params['id']}")
     month_entries = get_all_records("entry").select { |entry| entry['category_id'] == @category['id'] && entry['date'].to_date.year == Date.current.year && entry['date'].to_date.month == Date.current.month && entry['type_id'] == "1" }
-    @expenses_this_month = month_entries.sum { |c| c['value'].to_i }
+    @expenses_this_month = month_entries.sum { |entry| entry['value'].to_i }
     @entries = get_all_records("entry").select { |entry| entry['category_id'] == @category['id'] }
   end
 
@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
     byebug
     new_id = redis_client.hmget("next_object_ids", "category")[0] || 1
     redis_client.hmset("next_object_ids", "category", (new_id.to_i + 1))
-    redis_client.mapped_hmset("category:#{new_id}", category_params)
+    redis_client.mapped_hmset("category:#{new_id}", {"id": new_id, "user_id": current_user.id.to_s, "name": category_params['name']})
 
     redirect_to '/categories'
   end

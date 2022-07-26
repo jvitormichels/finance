@@ -12,7 +12,6 @@
           <p>
             <label for="entry[account_id]">Conta:</label>
             <select name="entry[account_id]" required>
-              <% byebug %>
               <% @accounts.each do |account| %>
                 <option value=<%= account[1] %> <%= 'selected=true' if @entry['account_id'] == account[1].to_s %>>
                   <%= account[0] %>
