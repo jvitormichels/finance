@@ -12067,3 +12067,808 @@ Processing by AccountsController#show as HTML
 Completed 200 OK in 24ms (Views: 15.4ms | ActiveRecord: 3.8ms | Allocations: 10049)
 
 
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:36:31 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.2ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 2.6ms | Allocations: 3877)
+  Rendered dashboard/index.haml within layouts/application (Duration: 24.5ms | Allocations: 16040)
+  Rendered layout layouts/application.html.haml (Duration: 73.7ms | Allocations: 60049)
+Completed 200 OK in 110ms (Views: 80.9ms | ActiveRecord: 5.4ms | Allocations: 74461)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:36:59 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.3ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 0.1ms | Allocations: 33)
+  Rendered dashboard/index.haml within layouts/application (Duration: 2.3ms | Allocations: 1061)
+  Rendered layout layouts/application.html.haml (Duration: 5.8ms | Allocations: 4403)
+Completed 200 OK in 11ms (Views: 5.9ms | ActiveRecord: 0.6ms | Allocations: 7589)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:37:41 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.3ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 2.1ms | Allocations: 1969)
+  Rendered dashboard/index.haml within layouts/application (Duration: 4.0ms | Allocations: 2997)
+  Rendered layout layouts/application.html.haml (Duration: 7.0ms | Allocations: 6239)
+Completed 200 OK in 22ms (Views: 7.2ms | ActiveRecord: 0.6ms | Allocations: 21169)
+
+
+Started GET "/accounts/12" for 172.20.0.1 at 2022-07-28 22:37:47 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering accounts/show.haml within layouts/application
+  Rendered entries/_list.haml (Duration: 3.6ms | Allocations: 5562)
+  Rendered accounts/show.haml within layouts/application (Duration: 6.9ms | Allocations: 9135)
+  Rendered layout layouts/application.html.haml (Duration: 11.5ms | Allocations: 12519)
+Completed 200 OK in 60580ms (Views: 12.8ms | ActiveRecord: 0.5ms | Allocations: 105345)
+
+
+Started GET "/accounts/12" for 172.20.0.1 at 2022-07-28 22:38:55 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering accounts/show.haml within layouts/application
+  Rendered entries/_list.haml (Duration: 0.1ms | Allocations: 39)
+  Rendered accounts/show.haml within layouts/application (Duration: 0.5ms | Allocations: 290)
+  Rendered layout layouts/application.html.haml (Duration: 12.0ms | Allocations: 16762)
+Completed 200 OK in 41ms (Views: 12.9ms | ActiveRecord: 2.7ms | Allocations: 38336)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:38:58 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.2ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 2.9ms | Allocations: 1975)
+  Rendered dashboard/index.haml within layouts/application (Duration: 38.1ms | Allocations: 5061)
+  Rendered layout layouts/application.html.haml (Duration: 41.3ms | Allocations: 8355)
+Completed 200 OK in 57ms (Views: 41.0ms | ActiveRecord: 1.5ms | Allocations: 23625)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:39:05 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.3ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 1.8ms | Allocations: 1927)
+  Rendered dashboard/index.haml within layouts/application (Duration: 4.1ms | Allocations: 2955)
+  Rendered layout layouts/application.html.haml (Duration: 7.2ms | Allocations: 6197)
+Completed 200 OK in 63ms (Views: 7.4ms | ActiveRecord: 0.5ms | Allocations: 21089)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:40:29 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.3ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 2.0ms | Allocations: 1927)
+  Rendered dashboard/index.haml within layouts/application (Duration: 4.3ms | Allocations: 2955)
+  Rendered layout layouts/application.html.haml (Duration: 7.3ms | Allocations: 6218)
+Completed 200 OK in 26ms (Views: 7.5ms | ActiveRecord: 0.6ms | Allocations: 21112)
+
+
+Started GET "/accounts/10" for 172.20.0.1 at 2022-07-28 22:40:46 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering accounts/show.haml within layouts/application
+  Rendered entries/_list.haml (Duration: 7.2ms | Allocations: 2914)
+  Rendered accounts/show.haml within layouts/application (Duration: 8.8ms | Allocations: 3159)
+  Rendered layout layouts/application.html.haml (Duration: 18.1ms | Allocations: 6422)
+Completed 200 OK in 58ms (Views: 19.1ms | ActiveRecord: 0.4ms | Allocations: 24765)
+
+
+Started GET "/accounts/10" for 172.20.0.1 at 2022-07-28 22:40:51 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering accounts/show.haml within layouts/application
+  Rendered entries/_list.haml (Duration: 0.1ms | Allocations: 39)
+  Rendered accounts/show.haml within layouts/application (Duration: 0.6ms | Allocations: 283)
+  Rendered layout layouts/application.html.haml (Duration: 4.0ms | Allocations: 3596)
+Completed 200 OK in 15ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 7238)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:40:54 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.3ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 0.1ms | Allocations: 33)
+  Rendered dashboard/index.haml within layouts/application (Duration: 2.1ms | Allocations: 1060)
+  Rendered layout layouts/application.html.haml (Duration: 8.0ms | Allocations: 4390)
+Completed 200 OK in 15ms (Views: 8.4ms | ActiveRecord: 0.5ms | Allocations: 7639)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:41:51 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.3ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 3.1ms | Allocations: 1927)
+  Rendered dashboard/index.haml within layouts/application (Duration: 5.1ms | Allocations: 2955)
+  Rendered layout layouts/application.html.haml (Duration: 9.1ms | Allocations: 6197)
+Completed 200 OK in 29ms (Views: 9.3ms | ActiveRecord: 0.5ms | Allocations: 21096)
+
+
+Started GET "/entries/new" for 172.20.0.1 at 2022-07-28 22:41:56 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EntriesController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering entries/new.haml within layouts/application
+  Rendered entries/new.haml within layouts/application (Duration: 19.9ms | Allocations: 10320)
+  Rendered layout layouts/application.html.haml (Duration: 24.0ms | Allocations: 13688)
+Completed 200 OK in 41ms (Views: 25.6ms | ActiveRecord: 0.3ms | Allocations: 24343)
+
+
+Started GET "/accounts/new" for 172.20.0.1 at 2022-07-28 22:41:58 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by AccountsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering accounts/new.haml within layouts/application
+  Rendered accounts/new.haml within layouts/application (Duration: 7.1ms | Allocations: 3840)
+  Rendered layout layouts/application.html.haml (Duration: 14.6ms | Allocations: 7156)
+Completed 200 OK in 21ms (Views: 15.9ms | ActiveRecord: 0.3ms | Allocations: 9092)
+
+
+Started POST "/accounts/new" for 172.20.0.1 at 2022-07-28 22:42:07 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by AccountsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "account"=>{"name"=>"Puteiro", "balance"=>"5000"}, "commit"=>"Save Account"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms | Allocations: 3660)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:42:07 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dashboard/index.haml
+  [1m[36mAccount Sum (0.2ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 2.4ms | Allocations: 2375)
+  Rendered dashboard/index.haml (Duration: 4.2ms | Allocations: 3400)
+Completed 200 OK in 18ms (Views: 4.7ms | ActiveRecord: 0.4ms | Allocations: 19470)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:42:15 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.4ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 6.7ms | Allocations: 2375)
+  Rendered dashboard/index.haml within layouts/application (Duration: 10.3ms | Allocations: 3403)
+  Rendered layout layouts/application.html.haml (Duration: 16.5ms | Allocations: 6666)
+Completed 200 OK in 60ms (Views: 16.9ms | ActiveRecord: 0.7ms | Allocations: 22615)
+
+
+Started GET "/accounts//edit" for 172.20.0.1 at 2022-07-28 22:42:22 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering accounts/show.haml within layouts/application
+  Rendered entries/_list.haml (Duration: 0.1ms | Allocations: 39)
+  Rendered accounts/show.haml within layouts/application (Duration: 0.5ms | Allocations: 283)
+  Rendered layout layouts/application.html.haml (Duration: 4.2ms | Allocations: 3608)
+Completed 200 OK in 19ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 21713)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:42:25 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.4ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 4.2ms | Allocations: 2375)
+  Rendered dashboard/index.haml within layouts/application (Duration: 7.8ms | Allocations: 3403)
+  Rendered layout layouts/application.html.haml (Duration: 13.9ms | Allocations: 6652)
+Completed 200 OK in 49ms (Views: 14.7ms | ActiveRecord: 0.7ms | Allocations: 22691)
+
+
+Started DELETE "/accounts/" for 172.20.0.1 at 2022-07-28 22:42:31 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [DELETE] "/accounts"):
+  
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:42:31 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.2ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 2.7ms | Allocations: 2375)
+  Rendered dashboard/index.haml within layouts/application (Duration: 4.8ms | Allocations: 3404)
+  Rendered layout layouts/application.html.haml (Duration: 8.6ms | Allocations: 6666)
+Completed 200 OK in 24ms (Views: 8.9ms | ActiveRecord: 0.4ms | Allocations: 22650)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:42:34 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.2ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 2.8ms | Allocations: 2375)
+  Rendered dashboard/index.haml within layouts/application (Duration: 4.8ms | Allocations: 3403)
+  Rendered layout layouts/application.html.haml (Duration: 9.6ms | Allocations: 6666)
+Completed 200 OK in 32ms (Views: 9.9ms | ActiveRecord: 0.6ms | Allocations: 22619)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:42:37 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.2ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 3.9ms | Allocations: 2375)
+  Rendered dashboard/index.haml within layouts/application (Duration: 6.1ms | Allocations: 3403)
+  Rendered layout layouts/application.html.haml (Duration: 9.5ms | Allocations: 6645)
+Completed 200 OK in 26ms (Views: 9.8ms | ActiveRecord: 0.6ms | Allocations: 22582)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:42:38 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.2ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 3.0ms | Allocations: 2375)
+  Rendered dashboard/index.haml within layouts/application (Duration: 4.8ms | Allocations: 3403)
+  Rendered layout layouts/application.html.haml (Duration: 8.1ms | Allocations: 6663)
+Completed 200 OK in 22ms (Views: 8.4ms | ActiveRecord: 0.4ms | Allocations: 22604)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:42:38 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.2ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 2.6ms | Allocations: 2375)
+  Rendered dashboard/index.haml within layouts/application (Duration: 5.4ms | Allocations: 3403)
+  Rendered layout layouts/application.html.haml (Duration: 9.9ms | Allocations: 6666)
+Completed 200 OK in 34ms (Views: 10.2ms | ActiveRecord: 0.4ms | Allocations: 22585)
+
+
+Started DELETE "/accounts/" for 172.20.0.1 at 2022-07-28 22:42:52 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [DELETE] "/accounts"):
+  
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:42:52 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.2ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 2.5ms | Allocations: 2375)
+  Rendered dashboard/index.haml within layouts/application (Duration: 4.6ms | Allocations: 3404)
+  Rendered layout layouts/application.html.haml (Duration: 9.1ms | Allocations: 6666)
+Completed 200 OK in 29ms (Views: 9.4ms | ActiveRecord: 0.4ms | Allocations: 22564)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:42:59 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.2ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 2.2ms | Allocations: 2375)
+  Rendered dashboard/index.haml within layouts/application (Duration: 4.3ms | Allocations: 3403)
+  Rendered layout layouts/application.html.haml (Duration: 7.2ms | Allocations: 6645)
+Completed 200 OK in 25ms (Views: 7.6ms | ActiveRecord: 0.5ms | Allocations: 22577)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:43:10 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.1ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 3.0ms | Allocations: 3279)
+  Rendered dashboard/index.haml within layouts/application (Duration: 7.9ms | Allocations: 6365)
+  Rendered layout layouts/application.html.haml (Duration: 18.3ms | Allocations: 21914)
+Completed 200 OK in 40ms (Views: 18.3ms | ActiveRecord: 3.8ms | Allocations: 40898)
+
+
+Started DELETE "/accounts/destroy/" for 172.20.0.1 at 2022-07-28 22:43:14 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by AccountsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"destroy"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 21ms (ActiveRecord: 0.2ms | Allocations: 10243)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/accounts_controller.rb:68:in `destroy'
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:43:14 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.2ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 2.9ms | Allocations: 2375)
+  Rendered dashboard/index.haml within layouts/application (Duration: 4.9ms | Allocations: 3404)
+  Rendered layout layouts/application.html.haml (Duration: 8.0ms | Allocations: 6670)
+Completed 200 OK in 22ms (Views: 8.2ms | ActiveRecord: 0.4ms | Allocations: 22480)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:43:21 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.2ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 2.3ms | Allocations: 2375)
+  Rendered dashboard/index.haml within layouts/application (Duration: 4.7ms | Allocations: 3403)
+  Rendered layout layouts/application.html.haml (Duration: 9.1ms | Allocations: 6645)
+Completed 200 OK in 23ms (Views: 9.5ms | ActiveRecord: 0.5ms | Allocations: 22596)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:43:22 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.2ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 4.2ms | Allocations: 2375)
+  Rendered dashboard/index.haml within layouts/application (Duration: 6.0ms | Allocations: 3403)
+  Rendered layout layouts/application.html.haml (Duration: 9.6ms | Allocations: 6670)
+Completed 200 OK in 27ms (Views: 9.8ms | ActiveRecord: 0.4ms | Allocations: 22591)
+
+
+Started DELETE "/accounts/destroy/" for 172.20.0.1 at 2022-07-28 22:43:30 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by AccountsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"destroy"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 19ms (ActiveRecord: 0.4ms | Allocations: 10022)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/accounts_controller.rb:68:in `destroy'
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:43:30 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.2ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 2.3ms | Allocations: 2375)
+  Rendered dashboard/index.haml within layouts/application (Duration: 4.1ms | Allocations: 3404)
+  Rendered layout layouts/application.html.haml (Duration: 7.5ms | Allocations: 6670)
+Completed 200 OK in 22ms (Views: 7.8ms | ActiveRecord: 0.4ms | Allocations: 22443)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:44:09 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.2ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 3.2ms | Allocations: 3285)
+  Rendered dashboard/index.haml within layouts/application (Duration: 9.0ms | Allocations: 6367)
+  Rendered layout layouts/application.html.haml (Duration: 20.0ms | Allocations: 21941)
+Completed 200 OK in 41ms (Views: 19.7ms | ActiveRecord: 3.8ms | Allocations: 40940)
+
+
+Started DELETE "/accounts/destroy/" for 172.20.0.1 at 2022-07-28 22:44:15 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by AccountsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"destroy"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 65147ms (ActiveRecord: 0.4ms | Allocations: 48035)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/accounts_controller.rb:69:in `destroy'
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:45:20 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.2ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 3.4ms | Allocations: 3291)
+  Rendered dashboard/index.haml within layouts/application (Duration: 8.8ms | Allocations: 6378)
+  Rendered layout layouts/application.html.haml (Duration: 19.1ms | Allocations: 21948)
+Completed 200 OK in 45ms (Views: 18.9ms | ActiveRecord: 3.5ms | Allocations: 40934)
+
+
+Started DELETE "/accounts//destroy" for 172.20.0.1 at 2022-07-28 22:45:27 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by AccountsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"destroy"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/accounts//edit" for 172.20.0.1 at 2022-07-28 22:47:11 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Completed 406 Not Acceptable in 103834ms (ActiveRecord: 0.5ms | Allocations: 49827)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/accounts_controller.rb:69:in `destroy'
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering accounts/show.haml within layouts/application
+  Rendered entries/_list.haml (Duration: 0.1ms | Allocations: 39)
+  Rendered accounts/show.haml within layouts/application (Duration: 0.6ms | Allocations: 291)
+  Rendered layout layouts/application.html.haml (Duration: 17.6ms | Allocations: 16812)
+Completed 200 OK in 40ms (Views: 18.5ms | ActiveRecord: 2.8ms | Allocations: 37997)
+
+
+Started GET "/accounts//edit" for 172.20.0.1 at 2022-07-28 22:47:17 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering accounts/show.haml within layouts/application
+  Rendered entries/_list.haml (Duration: 0.1ms | Allocations: 39)
+  Rendered accounts/show.haml within layouts/application (Duration: 0.5ms | Allocations: 283)
+  Rendered layout layouts/application.html.haml (Duration: 3.9ms | Allocations: 3587)
+Completed 200 OK in 19ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 21801)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:47:19 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.3ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 5.3ms | Allocations: 2435)
+  Rendered dashboard/index.haml within layouts/application (Duration: 16.6ms | Allocations: 5527)
+  Rendered layout layouts/application.html.haml (Duration: 23.9ms | Allocations: 8824)
+Completed 200 OK in 61ms (Views: 23.0ms | ActiveRecord: 3.2ms | Allocations: 25110)
+
+
+Started GET "/accounts//edit" for 172.20.0.1 at 2022-07-28 22:47:28 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering accounts/show.haml within layouts/application
+  Rendered entries/_list.haml (Duration: 0.1ms | Allocations: 39)
+  Rendered accounts/show.haml within layouts/application (Duration: 0.5ms | Allocations: 290)
+  Rendered layout layouts/application.html.haml (Duration: 12.5ms | Allocations: 16829)
+Completed 200 OK in 42ms (Views: 13.3ms | ActiveRecord: 2.8ms | Allocations: 38026)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:48:12 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.4ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 24.0ms | Allocations: 2435)
+  Rendered dashboard/index.haml within layouts/application (Duration: 90.1ms | Allocations: 5527)
+  Rendered layout layouts/application.html.haml (Duration: 94.2ms | Allocations: 8824)
+Completed 200 OK in 139ms (Views: 84.5ms | ActiveRecord: 11.7ms | Allocations: 25116)
+
+
+Started GET "/accounts/10" for 172.20.0.1 at 2022-07-28 22:48:14 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering accounts/show.haml within layouts/application
+  Rendered entries/_list.haml (Duration: 5.3ms | Allocations: 2913)
+  Rendered accounts/show.haml within layouts/application (Duration: 5.9ms | Allocations: 3158)
+  Rendered layout layouts/application.html.haml (Duration: 10.6ms | Allocations: 6432)
+Completed 200 OK in 44ms (Views: 11.3ms | ActiveRecord: 0.4ms | Allocations: 24781)
+
+
+Started GET "/entries/42/edit" for 172.20.0.1 at 2022-07-28 22:48:16 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering entries/edit.erb within layouts/application
+  Rendered entries/edit.erb within layouts/application (Duration: 0.9ms | Allocations: 630)
+  Rendered layout layouts/application.html.haml (Duration: 4.6ms | Allocations: 4058)
+Completed 200 OK in 21ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 15775)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:48:54 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.5ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 35036.4ms | Allocations: 197222)
+  Rendered dashboard/index.haml within layouts/application (Duration: 35050.5ms | Allocations: 201377)
+  Rendered layout layouts/application.html.haml (Duration: 35057.6ms | Allocations: 208510)
+Completed 200 OK in 35101ms (Views: 35060.9ms | ActiveRecord: 0.9ms | Allocations: 225061)
+
+
+Started GET "/accounts/10" for 172.20.0.1 at 2022-07-28 22:49:58 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering accounts/show.haml within layouts/application
+  Rendered entries/_list.haml (Duration: 16.5ms | Allocations: 8340)
+  Rendered accounts/show.haml within layouts/application (Duration: 24.8ms | Allocations: 11881)
+  Rendered layout layouts/application.html.haml (Duration: 32.7ms | Allocations: 15183)
+Completed 200 OK in 83ms (Views: 35.2ms | ActiveRecord: 0.4ms | Allocations: 33884)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:51:34 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.2ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 2836.4ms | Allocations: 191720)
+  Rendered dashboard/index.haml within layouts/application (Duration: 2842.1ms | Allocations: 195872)
+  Rendered layout layouts/application.html.haml (Duration: 2854.6ms | Allocations: 203001)
+Completed 200 OK in 2870ms (Views: 2855.7ms | ActiveRecord: 0.5ms | Allocations: 219568)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:53:41 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.3ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 89292.5ms | Allocations: 206285)
+  Rendered dashboard/index.haml within layouts/application (Duration: 89298.4ms | Allocations: 210448)
+  Rendered layout layouts/application.html.haml (Duration: 89305.3ms | Allocations: 217755)
+Completed 200 OK in 89326ms (Views: 89306.5ms | ActiveRecord: 0.7ms | Allocations: 234190)
+
+
+Started GET "/installments" for 172.20.0.1 at 2022-07-28 22:55:11 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by InstallmentsController#index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering installments/index.haml within layouts/application
+  Rendered installments/index.haml within layouts/application (Duration: 4.0ms | Allocations: 5332)
+  Rendered layout layouts/application.html.haml (Duration: 7.5ms | Allocations: 8618)
+Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 13061)
+
+
+Started GET "/installments/5/edit" for 172.20.0.1 at 2022-07-28 22:55:15 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by InstallmentsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering installments/edit.erb within layouts/application
+  Rendered installments/edit.erb within layouts/application (Duration: 0.7ms | Allocations: 209)
+  Rendered layout layouts/application.html.haml (Duration: 4.3ms | Allocations: 3587)
+Completed 200 OK in 11ms (Views: 4.8ms | ActiveRecord: 0.4ms | Allocations: 6182)
+
+
+Started GET "/categories" for 172.20.0.1 at 2022-07-28 22:55:28 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CategoriesController#index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering categories/index.haml within layouts/application
+  Rendered categories/_list.haml (Duration: 6.8ms | Allocations: 7878)
+  Rendered categories/index.haml within layouts/application (Duration: 9.4ms | Allocations: 10113)
+  Rendered layout layouts/application.html.haml (Duration: 13.1ms | Allocations: 13381)
+Completed 200 OK in 22ms (Views: 14.1ms | ActiveRecord: 0.2ms | Allocations: 20635)
+
+
+Started GET "/categories/17" for 172.20.0.1 at 2022-07-28 22:55:43 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CategoriesController#show as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"17"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering categories/show.haml within layouts/application
+  Rendered entries/_list.haml (Duration: 5.1ms | Allocations: 5527)
+  Rendered categories/show.haml within layouts/application (Duration: 7.7ms | Allocations: 8096)
+  Rendered layout layouts/application.html.haml (Duration: 11.4ms | Allocations: 11418)
+Completed 200 OK in 33ms (Views: 11.9ms | ActiveRecord: 0.3ms | Allocations: 29173)
+
+
+Started GET "/categories" for 172.20.0.1 at 2022-07-28 22:55:45 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering categories/index.haml within layouts/application
+  Rendered categories/_list.haml (Duration: 15.0ms | Allocations: 4638)
+  Rendered categories/index.haml within layouts/application (Duration: 16.7ms | Allocations: 4963)
+  Rendered layout layouts/application.html.haml (Duration: 27.4ms | Allocations: 8222)
+Completed 200 OK in 47ms (Views: 28.7ms | ActiveRecord: 0.5ms | Allocations: 15056)
+
+
+Started DELETE "/categories/17" for 172.20.0.1 at 2022-07-28 22:55:48 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CategoriesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 22ms (ActiveRecord: 0.4ms | Allocations: 10186)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/categories_controller.rb:41:in `destroy'
+Started GET "/categories" for 172.20.0.1 at 2022-07-28 22:55:48 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering categories/index.haml within layouts/application
+  Rendered categories/_list.haml (Duration: 6.3ms | Allocations: 4132)
+  Rendered categories/index.haml within layouts/application (Duration: 7.2ms | Allocations: 4458)
+  Rendered layout layouts/application.html.haml (Duration: 14.0ms | Allocations: 7717)
+Completed 200 OK in 25ms (Views: 14.7ms | ActiveRecord: 0.1ms | Allocations: 13834)
+
+
+Started GET "/categories" for 172.20.0.1 at 2022-07-28 22:55:49 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering categories/index.haml within layouts/application
+  Rendered categories/_list.haml (Duration: 4.8ms | Allocations: 4132)
+  Rendered categories/index.haml within layouts/application (Duration: 5.6ms | Allocations: 4457)
+  Rendered layout layouts/application.html.haml (Duration: 9.0ms | Allocations: 7696)
+Completed 200 OK in 17ms (Views: 9.5ms | ActiveRecord: 0.2ms | Allocations: 14033)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:55:57 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.5ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 6121.9ms | Allocations: 188827)
+  Rendered dashboard/index.haml within layouts/application (Duration: 6127.4ms | Allocations: 189855)
+  Rendered layout layouts/application.html.haml (Duration: 6133.0ms | Allocations: 193122)
+Completed 200 OK in 6175ms (Views: 6133.6ms | ActiveRecord: 0.9ms | Allocations: 209151)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 22:57:52 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.4ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 5815.4ms | Allocations: 188286)
+  Rendered dashboard/index.haml within layouts/application (Duration: 5818.3ms | Allocations: 189314)
+  Rendered layout layouts/application.html.haml (Duration: 5823.1ms | Allocations: 192577)
+Completed 200 OK in 5850ms (Views: 5823.3ms | ActiveRecord: 0.8ms | Allocations: 208499)
+
+
+Started GET "/accounts/10" for 172.20.0.1 at 2022-07-28 23:04:16 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering accounts/show.haml within layouts/application
+  Rendered entries/_list.haml (Duration: 13.1ms | Allocations: 9296)
+  Rendered accounts/show.haml within layouts/application (Duration: 16.4ms | Allocations: 12838)
+  Rendered layout layouts/application.html.haml (Duration: 29.8ms | Allocations: 32257)
+Completed 200 OK in 56ms (Views: 31.1ms | ActiveRecord: 3.7ms | Allocations: 56127)
+
+
+Started GET "/" for 172.20.0.1 at 2022-07-28 23:04:20 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering dashboard/index.haml within layouts/application
+  [1m[36mAccount Sum (0.7ms)[0m  [1m[34mSELECT SUM("accounts"."balance") FROM "accounts" WHERE "accounts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/dashboard/index.haml:9
+  Rendered accounts/_list.haml (Duration: 43.7ms | Allocations: 6248)
+  Rendered dashboard/index.haml within layouts/application (Duration: 65.2ms | Allocations: 12217)
+  Rendered layout layouts/application.html.haml (Duration: 117.0ms | Allocations: 15489)
+Completed 200 OK in 163ms (Views: 126.1ms | ActiveRecord: 1.4ms | Allocations: 31913)
+
+

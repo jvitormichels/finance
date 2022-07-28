@@ -41,10 +41,8 @@ rails db:create
 	* Caso o banco esteja de fato quebrado, rode o seguinte comando no console que é criado no passo 8#
 	* rails db:environment:set RAILS_ENV=development && rails db:drop RAILS_ENV=development && rails db:create RAILS_ENV=development && rails db:migrate RAILS_ENV=development
 
-
-11# Com o docker rodando, abra um novo terminal na mesma pasta, com permissões de administrador, e execute o seguinte comando:
-type dump_crm.sql | docker exec -i finance_db_1 psql -U postgres
-* O arquivo de dump do banco de dados deve estar na mesma pasta em que o terminal se encontra (neste arquivo, ele está uma pasta para cima)
+11# Para popular o banco, abrir outra janela do terminal no diretório do projeto, com a aplicação de pé, e rodar o comando "make bash". O make bash abre um console, no qual você deve rodar o seguinte comando para popular a base
+	rails runner lib/runners/populate_base.rb
 
 12# Depois de feito todos estes passos, caso deseje subir o docker novamente para rodar o projeto, basta abrir um terminal com permissões de administrador e colocar o seguinte comando na tela:
 docker-compose up
