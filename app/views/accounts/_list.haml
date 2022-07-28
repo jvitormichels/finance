@@ -17,7 +17,7 @@
             %td
               = "R$ #{account['balance']}"
             %td
-              = button_to("Destroçar", {:controller => :accounts, :action => 'destroy', :id => account['id'] }, :method => :delete, data: { confirm: 'Tem certeza que quer destroçar isso ai?' })
+              = button_to("Destroçar", {:controller => :accounts, :action => 'destroy', :id => account['id'] }, :method => :delete, data: { confirm: 'Tem certeza disso ai, irmã?' })
               = button_to("Editar", {:controller => :accounts, :action => 'edit', :id => account['id'] }, :method => :get)
 
 - else

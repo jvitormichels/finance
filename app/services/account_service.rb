@@ -1,6 +1,5 @@
 class AccountService
   def account_cash_flow(account_id, year = Date.current.year, month = Date.current.month)
-    byebug
     account = redis_client.hgetall("account:#{account_id}")
     entries = get_all_records("entry").select { |entry| entry['account_id'] == account['id'] && entry['date'].to_date.year == year && entry['date'].to_date.month == month }
     expense_total = entries.select { |entry| entry['type_id'] == '1' }.sum { |entry| entry['value'].to_i }
@@ -39,7 +38,6 @@ class AccountService
   end
 
   def subtract_balance(account_id, value)
-    byebug
     balance = redis_client.hmget("account:#{account_id}", "balance")[0].to_i
     new_balance = balance - value.to_i
     redis_client.hmset("account:#{account_id}", "balance", new_balance)

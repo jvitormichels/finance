@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       get '/:id', to: 'accounts#show'
       post '/new', to: 'accounts#create'
       post '/:id/update', to: 'accounts#update'
-      # delete '/destroy/:id', to: 'accounts#destroy'
+      delete '/:id/destroy', to: 'accounts#destroy'
     end
   end
 
