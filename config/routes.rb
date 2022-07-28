@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     collection do
       get '/new', to: 'accounts#new'
       get '/:id', to: 'accounts#show'
+      post '/new', to: 'accounts#create'
+      post '/:id/update', to: 'accounts#update'
+      # delete '/destroy/:id', to: 'accounts#destroy'
     end
   end
 

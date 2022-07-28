@@ -14,7 +14,6 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    byebug
     new_id = redis_client.hmget("next_object_ids", "category")[0] || 1
     redis_client.hmset("next_object_ids", "category", (new_id.to_i + 1))
     redis_client.mapped_hmset("category:#{new_id}", {"id": new_id, "user_id": current_user.id.to_s, "name": category_params['name']})
@@ -34,6 +33,10 @@ class CategoriesController < ApplicationController
 
   def destroy
     redis_client.del("category:#{params['id']}")
+    category_entries = get_all_records("entry").select { |entry| entry['category_id'] == params['id'] }
+    category_entries.each do |category_entry|
+      redis_client.del("entry:#{category_entry['id']}")
+    end
 
     respond_to do |format|
       format.js {render inline: "location.reload();" }

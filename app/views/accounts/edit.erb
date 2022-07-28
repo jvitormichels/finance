@@ -1,0 +1,21 @@
+<div class="show-box">
+  <div class="form-box">
+    <div class="form-header">
+      <p>
+        Editar conta erb caralho
+      </p>
+
+      <form name="account" action="update" method="post">
+        <p>
+          <label for="account[name]">Título:</label>
+          <input type="text" name="account[name]" value="<%= @account['name'] %>" required>
+        </p>
+        <p>
+          <label for="account[balance]">Título:</label>
+          <input type="number" name="account[balance]" value="<%= @account['balance'] %>" required>
+        </p>
+        <input type="submit" value="dale">
+      </form>
+    </div>
+  </div>
+</div>
