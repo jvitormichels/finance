@@ -1,0 +1,4 @@
+1. Subir a aplicação em uma janela do terminal com make docker
+2. Abrir outra janela do terminal no diretório do projeto, com a aplicação de pé, e rodar o comando "make bash"
+3. O make bash abre um console, no qual você deve rodar o seguinte comando para popular a base
+	rails runner lib/runners/populate_base.rb
