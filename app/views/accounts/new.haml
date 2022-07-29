@@ -1,5 +1,6 @@
 .show-box
-  = form_for(@account, format: 'js', html: {role: 'form', class: 'form-proposal-template form-wrap ajax-loading' }) do |f|
+  -# = form_for(:account, format: 'js', html: {role: 'form', class: 'form-proposal-template form-wrap ajax-loading' }) do |f|
+  = form_for(:account, url: "new") do |f|
     .form-box
       .form-header
         %p
@@ -10,6 +11,6 @@
           = f.text_field :name, required: true
         %p
           = f.label :balance, "Balanço:"
-          = f.text_field :balance, required: true
+          = f.text_field :balance, required: true#, value: 0
       .form-footer
         = f.submit

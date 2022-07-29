@@ -1,8 +1,8 @@
-= form_for(@entry, format: 'js', html: {role: 'form', class: 'form-proposal-template form-wrap ajax-loading' }) do |f|
+-# = form_for(:entry, format: 'js', html: {role: 'form', class: 'form-proposal-template form-wrap ajax-loading' }) do |f|
   .form-body
     %p
       = f.label :title, "Título:"
-      = f.text_field :title, required: true
+      = f.text_field :title, required: true, value: @entry['title']
     %p
       = f.label :account_id, "Conta:"
       = f.select :account_id, @accounts, {}, required: true

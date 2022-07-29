@@ -4,11 +4,11 @@
     = link_to 'Voltar para a lista', :back
     %p
       %h2
-        = @account.name
+        = @account['name']
     %p
       %strong
         Saldo atual: 
-      = "R$ #{@account.balance}"
+      = "R$ #{@account['balance']}"
     %p
       %strong
         Fluxo de caixa (mês atual): 

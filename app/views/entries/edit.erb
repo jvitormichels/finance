@@ -1,0 +1,78 @@
+<div class="show-box">
+  <div class="form-box">
+    <div class="form-header">
+      <p>Editar registro erb caralho</p>
+      <form name="entry" action="update" method="post">
+        <div class="form-body">
+          <p>
+            <label for="entry[title]">Título:</label>
+            <input type="text" name="entry[title]" value="<%= @entry['title'] %>" required>
+          </p>
+
+          <p>
+            <label for="entry[account_id]">Conta:</label>
+            <select name="entry[account_id]" required>
+              <% @accounts.each do |account| %>
+                <option value=<%= account[1] %> <%= 'selected=true' if @entry['account_id'] == account[1].to_s %>>
+                  <%= account[0] %>
+                </option>
+              <% end %>
+            </select>
+          </p>
+
+          <p>
+            <label for="entry[category_id]">Conta:</label>
+            <select name="entry[category_id]" required>
+              <% @categories.each do |category| %>
+                <option value=<%= category[1] %> <%= 'selected=true' if @entry['category_id'] == category[1].to_s %>>
+                  <%= category[0] %>
+                </option>
+              <% end %>
+            </select>
+          </p>
+
+          <p>
+            <label for="entry[description]">Descrição:</label>
+            <input type="text" name="entry[description]" value="<%= @entry['description'] %>">
+          </p>
+
+          <p>
+            <label for="entry[date]">Data:</label>
+            <input type="date" name="entry[date]" value="<%= @entry['date'] %>" required>
+          </p>
+
+          <p>
+            <label for="entry[value]">Valor:</label>
+            <input type="number" name="entry[value]" value="<%= @entry['value'] %>" required>
+          </p>
+
+          <p>
+            <label for="entry[type_id]">Conta:</label>
+            <select name="entry[type_id]" required>
+              <option value="1" <%= 'selected=true' if @entry['type_id'] == "1" %>>
+                Despesa
+              </option>
+              <option value="2" <%= 'selected=true' if @entry['type_id'] == "2" %>>
+                Receita
+              </option>
+            </select>
+          </p>
+
+          <p>
+            <label for="entry[installment_id]">Conta:</label>
+            <select name="entry[installment_id]">
+              <% @installments.each do |installment| %>
+                <option value=<%= installment[1] %> <%= 'selected=true' if @entry['installment_id'] == installment[1].to_s %>>
+                  <%= installment[0] %>
+                </option>
+              <% end %>
+            </select>
+          </p>
+        </div>
+        <div class="form-footer">
+          <input type="submit" value="dale">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

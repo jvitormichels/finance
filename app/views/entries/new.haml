@@ -3,5 +3,32 @@
     .form-header
       %p
         Novo registro
-    
-    = render 'entries/form'
+      = form_for(:entry, url: "/entries") do |f|
+        .form-body
+          %p
+            = f.label :title, "Título:"
+            = f.text_field :title, required: true, value: ()
+          %p
+            = f.label :account_id, "Conta:"
+            = f.select :account_id, @accounts, {}, required: true
+          %p
+            = f.label :category_id, "Categoria"
+            = f.select :category_id, @categories, {}, required: true
+          %p
+            = f.label :description, "Descrição:"
+            = f.text_area :description
+          %p
+            = f.label :date, "Data:"
+            = f.date_field :date, required: true, value: Time.now.strftime("%Y-%m-%d")
+          %p
+            = f.label :value, "Valor:"
+            = f.number_field :value, required: true
+          %p
+            = f.label :type_id, "Tipo:"
+            = f.select :type_id, [["Despesa", 1],["Receita", 2]], required: true
+          %p
+            = f.label :installment_id, "Orçamento associado:"
+            = f.select :installment_id, @installments, include_blank: true
+
+        .form-footer
+          = f.submit

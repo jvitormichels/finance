@@ -4,10 +4,10 @@
       = link_to 'Voltar para o início', :back
     %p
       %h2
-        = @category.name
+        = @category['name']
     %p
       %strong
-        Gastos do mês: 
+        Gastos do mês:
       = "R$ #{@expenses_this_month}"
 
   = render 'entries/list'

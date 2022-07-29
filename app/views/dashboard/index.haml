@@ -15,30 +15,3 @@
       
 
   = render 'accounts/list'
-
-.right
-  %table{border: 1, class: "table"}
-    %thead
-      %tr
-        %th{colspan: 4}
-          Ranking de categorias por quantidade de despesas
-      %tr
-        %th
-          Posição
-        %th
-          Categoria
-        %th
-          Despesas totais
-        %th
-          Ocorrências
-    %tbody
-      - @categories.each_with_index do |category, index|
-        %tr
-          %td
-            = "#{index + 1}º"
-          %td
-            = link_to(category.name, {:controller => :categories, :action => 'show', :id => category.id }, :method => :get)
-          %td
-            = "R$ #{category.total_expenses}"
-          %td
-            = category.total_occurrences

@@ -3,18 +3,18 @@
     = link_to 'Voltar para a conta', :back
   %p
     %h2
-      = @entry.title
+      = @entry['title']
   %p
     %strong
       Valor: 
-    = "R$ #{@entry.value}"
+    = "R$ #{@entry['value']}"
   %p
     %strong
       Data: 
-    = @entry.date.strftime("%d/%m/%Y")
+    = @entry['date'].to_date.strftime("%d/%m/%Y")
   %hr
   %p
     %strong
       Descrição
   %p{style: "padding: 0 0.5em"}
-    = @entry.description
+    = @entry['description']

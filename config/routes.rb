@@ -9,13 +9,29 @@ Rails.application.routes.draw do
     collection do
       get '/new', to: 'accounts#new'
       get '/:id', to: 'accounts#show'
+      post '/new', to: 'accounts#create'
+      post '/:id/update', to: 'accounts#update'
+      delete '/:id/destroy', to: 'accounts#destroy'
     end
   end
 
-  resources :entries, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-
-  resources :categories do
+  resources :entries, only: [:index, :show, :new, :create, :edit, :destroy]
+  resources :entries do
+    collection do
+      post '/:id/update', to: 'entries#update'
+    end
   end
 
-  resources :installments, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :categories do
+    collection do
+      post '/:id/update', to: 'categories#update'
+    end
+  end
+
+  resources :installments, only: [:index, :show, :new, :create, :edit, :destroy]
+  resources :installments do
+    collection do
+      post '/:id/update', to: 'installments#update'
+    end
+  end
 end

@@ -1,0 +1,28 @@
+<div class='show-box'>
+  <div class="form-box">
+    <div class="form-header">
+      <p>Editar orçamento erb caralho</p>
+      <form name="entry" action="update" method="post">
+        <div class="form-body">
+          <p>
+            <label for="installment[name]">Título:</label>
+            <input type="text" name="installment[name]" value="<%= @installment['name'] %>" required>
+          </p>
+
+          <p>
+            <label for="installment[description]">Descrição:</label>
+            <input type="text" name="installment[description]" value="<%= @installment['description'] %>">
+          </p>
+
+          <p>
+            <label for="installment[planned_expense]">Gasto planejado:</label>
+            <input type="number" name="installment[planned_expense]" value="<%= @installment['planned_expense'] %>" required>
+          </p>
+        </div>
+        <div class="form-footer">
+          <input type="submit" value="dale">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

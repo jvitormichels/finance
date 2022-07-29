@@ -1,0 +1,59 @@
+Alunos: João Vitor Michels e Maria Júlia Köhler
+
+1# Instalar o Docker for Windows, conforme descrito no link a seguir:
+https://runnable.com/docker/install-docker-on-windows-10
+* Talvez seja necessário reiniciar o computador, e existem algumas restrições quanto à máquina para rodar o docker. Estas estão listadas na sessão Common Pitfalls do tutorial
+
+2# Clone o repositório do projeto, ou, neste caso, você já deve ter o projeto
+https://github.com/jvitormichels/finance.git
+
+3# Após assegurar-se de que o docker está funcionando em sua máquina, abra um terminal na pasta do projeto, **com permissões de administrador**
+
+4# Roder o seguinte comando
+docker build docker-compose.yml
+* Este comando vai buildar a imagem do projeto a partir do docker-compose.yml, usaremos esta imagem para construir o container
+
+5# Rode o seguinte comando para pegar o ID da imagem criada
+docker image ls
+* Procure pela coluna IMAGE ID, na linha do REPOSITORY ruby e TAG 3.1.2. Copie o ID dessa imagem
+
+6# Rode o seguinte comando para buildar o container a partir da imagem do projeto, substituindo [IMAGE ID] pelo ID da imagem
+docker create [IMAGE ID]
+
+7# Suba o container recém criado com o seguinte comando
+docker-compose up
+* Pode ser necessário compartilhar o disco, caso encontre o erro "ERROR: for rails  Cannot create container for service rails: C: drive is not shared. Please share it in Docker for Windows Settings"
+* Detalhes da tratativa no link a seguir: https://github.com/docker/compose/issues/4854#issuecomment-516579733
+
+8# Com o container rodando, abra outro terminal na mesma pasta, também com permissões de administrador, e rode o seguinte comando:
+docker exec -it finance /bin/bash
+* Este comando abre um console do rails no qual criaremos o banco de dados
+
+9# Dentro do console criado no passo 8#, rode o seguinte comando para efetivamente criar o banco
+rails db:create
+
+10# Abra o localhost:3000 no navegador e crie uma conta
+* A senha deve possuir no mínimo 6 caracteres
+* Ao criar a conta, o app quebra com o erro de users_url, é um problema do devise e que não tem a ver com o banco de dados. Recarregue e volte para a página de login
+* Logue com o usuário que você criou. Ao clicar no botão de Login, o app loga com a sua conta porém não atualiza a página. Dê um F5 e seja feliz.
+* Se em algum momento parar em uma página com um erro, tente retornar para a página inicial em localhost:3000
+* Se a página inicial estiver quebrada e nada mais funcionar, talvez você tenha quebrado o banco (acontece, e seria um problema de validação em algo do backend (nunca aconteceu durante o desenvolvimento, mas nunca se sabe))
+	* Caso o banco esteja de fato quebrado, rode o seguinte comando no console que é criado no passo 8#
+	* rails db:environment:set RAILS_ENV=development && rails db:drop RAILS_ENV=development && rails db:create RAILS_ENV=development && rails db:migrate RAILS_ENV=development
+
+11# Para popular o banco, abrir outra janela do terminal no diretório do projeto, com a aplicação de pé, e rodar o comando "make bash". O make bash abre um console, no qual você deve rodar o seguinte comando para popular a base
+	rails runner lib/runners/populate_base.rb
+
+12# Depois de feito todos estes passos, caso deseje subir o docker novamente para rodar o projeto, basta abrir um terminal com permissões de administrador e colocar o seguinte comando na tela:
+docker-compose up
+* Caso tenha o erro de que já existe um container rodando, pedindo para checar o arquivo server.pid, rode o seguinte comando no cmd, com permissões de administrador na pasta do projeto
+del tmp\pids\server.pid
+* Este comando deleta um arquivo temporário que as vezes não é deletado ao derrubar a aplicação. Se este arquivo não foi adequadamente deletado, o docker entende que a aplicação já está de pé, e, portanto, falha em subir o container.
+* Agora, rode novamente o docker-compose up para subir o container
+
+--------------------------------
+Detalhes finais:
+Para fins de consulta do programa, existe o usuário modelo que foi populado anteriormente.
+login: joao@udesc.com.br
+senha: euax@2022
+

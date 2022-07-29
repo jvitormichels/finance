@@ -8,10 +8,10 @@
     - @categories.each do |category|
       %tr
         %td
-          = link_to(category.name, {:controller => :categories, :action => 'show', :id => category.id }, :method => :get)
+          = link_to(category['name'], {:controller => :categories, :action => 'show', :id => category['id'] }, :method => :get)
         %td
-          = button_to("Destroçar", {:controller => :categories, :action => 'destroy', :id => category.id }, :method => :delete, data: { confirm: 'Tem certeza que quer destroçar isso ai?' })
-          = button_to("Editar", {:controller => :categories, :action => 'edit', :id => category.id }, :method => :get)
+          = button_to("Destroçar", {:controller => :categories, :action => 'destroy', :id => category['id'] }, :method => :delete, data: { confirm: 'Tem certeza que quer destroçar isso ai?' })
+          = button_to("Editar", {:controller => :categories, :action => 'edit', :id => category['id'] }, :method => :get)
 
 - else
   .show-box

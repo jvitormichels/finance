@@ -8,6 +8,8 @@ services:
     tty: true        # docker run -t
     ports:
       - 3000:3000
+    links:
+      - redis
     volumes:
       - .:/opt/app
     environment: 
@@ -16,6 +18,11 @@ services:
       - POSTGRES_HOST=db
     depends_on:
       - db
+  redis:
+    image: redis
+    command: redis-server --appendonly yes --appendfsync everysec
+    ports:
+      - "6379:6379"
   db:
     image: postgres:13.4-buster
     environment:
